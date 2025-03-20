@@ -141,24 +141,24 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 text-white p-4">
+    <main className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 text-white p-2 sm:p-4">
       {/* Header */}
-      <div className="max-w-4xl mx-auto mb-8">
-        <h1 className="text-5xl font-bold text-center mb-2 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+      <div className="max-w-4xl mx-auto mb-4 sm:mb-8">
+        <h1 className="text-3xl sm:text-5xl font-bold text-center mb-2 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
           JACKPOT
         </h1>
-        <p className="text-center text-gray-300 text-lg">Pick 5 numbers and try your luck!</p>
+        <p className="text-center text-gray-300 text-sm sm:text-lg">Pick 5 numbers and try your luck!</p>
       </div>
 
       {/* Wallet Connection */}
-      <div className="max-w-4xl mx-auto mb-8">
+      <div className="max-w-4xl mx-auto mb-4 sm:mb-8">
         {!isConnected ? (
-          <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 text-center border border-white/10 shadow-xl">
-            <h2 className="text-2xl font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+          <div className="bg-white/5 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-8 text-center border border-white/10 shadow-xl">
+            <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
               Connect Your Wallet
             </h2>
             {connectionError && (
-              <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 text-sm backdrop-blur-sm">
+              <div className="mb-4 sm:mb-6 p-3 sm:p-4 bg-red-500/10 border border-red-500/20 rounded-lg sm:rounded-xl text-red-400 text-xs sm:text-sm backdrop-blur-sm">
                 {connectionError}
               </div>
             )}
@@ -167,46 +167,46 @@ export default function Home() {
               disabled={isConnecting}
               className={`
                 bg-gradient-to-r from-pink-500 to-violet-500 hover:from-pink-600 hover:to-violet-600
-                px-8 py-4 rounded-xl font-semibold text-lg
+                px-4 sm:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold text-base sm:text-lg
                 transition-all duration-300 transform hover:scale-105
-                flex items-center justify-center gap-3 shadow-lg
+                flex items-center justify-center gap-2 sm:gap-3 shadow-lg w-full sm:w-auto
                 ${isConnecting ? 'opacity-50 cursor-not-allowed' : ''}
               `}
             >
               {isConnecting ? (
                 <>
-                  <span className="animate-spin text-2xl">⚡</span>
+                  <span className="animate-spin text-xl sm:text-2xl">⚡</span>
                   Connecting...
                 </>
               ) : (
                 <>
-                  <span className="text-2xl">👛</span>
+                  <span className="text-xl sm:text-2xl">👛</span>
                   Connect Wallet
                 </>
               )}
             </button>
           </div>
         ) : (
-          <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 flex justify-between items-center border border-white/10 shadow-xl">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-pink-500 to-violet-500 flex items-center justify-center text-2xl shadow-lg">
+          <div className="bg-white/5 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-6 flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0 border border-white/10 shadow-xl">
+            <div className="flex items-center gap-3 sm:gap-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-gradient-to-r from-pink-500 to-violet-500 flex items-center justify-center text-xl sm:text-2xl shadow-lg">
                 👛
               </div>
               <div>
-                <span className="text-gray-300 block text-sm">Connected Wallet</span>
-                <span className="font-mono text-sm bg-white/5 px-3 py-1 rounded-lg">{formatAddress(address || '')}</span>
+                <span className="text-gray-300 block text-xs sm:text-sm">Connected Wallet</span>
+                <span className="font-mono text-xs sm:text-sm bg-white/5 px-2 sm:px-3 py-1 rounded-lg">{formatAddress(address || '')}</span>
               </div>
             </div>
-            <div className="flex gap-3">
+            <div className="flex gap-2 sm:gap-3">
               <button
                 onClick={() => setShowTransferModal(true)}
-                className="bg-white/10 hover:bg-white/20 px-6 py-2.5 rounded-xl text-sm transition-all duration-300 transform hover:scale-105 backdrop-blur-sm"
+                className="bg-white/10 hover:bg-white/20 px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg sm:rounded-xl text-xs sm:text-sm transition-all duration-300 transform hover:scale-105 backdrop-blur-sm"
               >
                 Transfer
               </button>
               <button
                 onClick={() => disconnect()}
-                className="bg-red-500/20 hover:bg-red-500/30 px-6 py-2.5 rounded-xl text-sm transition-all duration-300 transform hover:scale-105 backdrop-blur-sm"
+                className="bg-red-500/20 hover:bg-red-500/30 px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg sm:rounded-xl text-xs sm:text-sm transition-all duration-300 transform hover:scale-105 backdrop-blur-sm"
               >
                 Disconnect
               </button>
@@ -217,152 +217,122 @@ export default function Home() {
 
       {/* Balance Display */}
       {isConnected && (
-        <div className="max-w-4xl mx-auto mb-8">
-          <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 flex justify-between items-center border border-white/10 shadow-xl">
-            <div className="flex items-center gap-4">
-              <span className="text-gray-300">Your Balance</span>
-              <span className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+        <div className="max-w-4xl mx-auto mb-4 sm:mb-8">
+          <div className="bg-white/5 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-6 flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0 border border-white/10 shadow-xl">
+            <div className="flex items-center gap-3 sm:gap-4">
+              <span className="text-gray-300 text-sm sm:text-base">Your Balance</span>
+              <span className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
                 {balance ? Number(formatEther(balance.value)).toFixed(2) : '0.00'} {balance?.symbol}
               </span>
             </div>
             <button
               onClick={() => setShowDepositModal(true)}
-              className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 px-6 py-2.5 rounded-xl text-sm transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2"
+              className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg sm:rounded-xl text-xs sm:text-sm transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2 w-full sm:w-auto justify-center"
             >
-              <span className="text-xl">💰</span> Add Funds
+              <span className="text-lg sm:text-xl">💰</span> Add Funds
             </button>
           </div>
         </div>
       )}
 
       {/* Number Selection */}
-      <div className="max-w-4xl mx-auto mb-8">
-        <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10 shadow-xl">
-          <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+      <div className="max-w-4xl mx-auto mb-4 sm:mb-8">
+        <div className="bg-white/5 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-8 border border-white/10 shadow-xl">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0 mb-4 sm:mb-6">
+            <h2 className="text-xl sm:text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
               Select Your Numbers
             </h2>
-            <div className="flex gap-3">
+            <div className="flex gap-2 sm:gap-3 w-full sm:w-auto">
               {selectedNumbers.length > 0 && (
                 <button
                   onClick={handleClearSelection}
-                  className="bg-red-500/20 hover:bg-red-500/30 px-6 py-2.5 rounded-xl text-sm transition-all duration-300 transform hover:scale-105 backdrop-blur-sm flex items-center gap-2"
+                  className="bg-red-500/20 hover:bg-red-500/30 px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg sm:rounded-xl text-xs sm:text-sm transition-all duration-300 transform hover:scale-105 backdrop-blur-sm flex items-center gap-2 flex-1 sm:flex-none justify-center"
                 >
-                  <span className="text-xl">🗑️</span> Clear
+                  <span className="text-lg sm:text-xl">🗑️</span> Clear
                 </button>
               )}
               <button
                 onClick={handleQuickPick}
-                className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 px-6 py-2.5 rounded-xl text-sm transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2"
+                className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg sm:rounded-xl text-xs sm:text-sm transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2 flex-1 sm:flex-none justify-center"
               >
-                <span className="text-xl">🎲</span> Quick Pick
+                <span className="text-lg sm:text-xl">🎲</span> Quick Pick
               </button>
             </div>
           </div>
-          <div className="grid grid-cols-10 gap-3 max-w-2xl mx-auto">
+
+          {/* Number Grid */}
+          <div className="grid grid-cols-5 sm:grid-cols-10 gap-2 sm:gap-3">
             {Array.from({ length: 50 }, (_, i) => i + 1).map((number) => (
               <button
                 key={number}
                 onClick={() => handleNumberSelect(number)}
                 className={`
-                  w-12 h-12 rounded-xl text-center text-lg
-                  ${
-                    selectedNumbers.includes(number)
-                      ? 'bg-gradient-to-r from-pink-500 to-violet-500 text-white shadow-lg scale-110'
-                      : 'bg-white/10 text-white hover:bg-white/20'
+                  aspect-square rounded-lg sm:rounded-xl text-sm sm:text-base font-semibold
+                  transition-all duration-300 transform hover:scale-105
+                  ${selectedNumbers.includes(number)
+                    ? 'bg-gradient-to-r from-pink-500 to-violet-500 text-white shadow-lg'
+                    : 'bg-white/10 hover:bg-white/20 text-gray-300'
                   }
-                  border border-white/10 transition-all duration-300
-                  flex items-center justify-center font-semibold
-                  hover:scale-105 backdrop-blur-sm
                 `}
               >
                 {number}
               </button>
             ))}
           </div>
-          
-          <div className="mt-8 flex justify-between items-center">
-            <div className="flex gap-3">
-              {selectedNumbers.sort((a, b) => a - b).map((number) => (
-                <div
-                  key={number}
-                  className="w-12 h-12 rounded-xl bg-gradient-to-r from-pink-500 to-violet-500 flex items-center justify-center font-bold text-lg shadow-lg"
-                >
-                  {number}
-                </div>
-              ))}
-              {Array(5 - selectedNumbers.length)
-                .fill(null)
-                .map((_, i) => (
-                  <div
-                    key={i}
-                    className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-xl backdrop-blur-sm border border-white/10"
-                  >
-                    ?
-                  </div>
-                ))}
-            </div>
+
+          {/* Place Bet Button */}
+          <div className="mt-6 sm:mt-8">
             <button
               onClick={handlePlaceBet}
+              disabled={selectedNumbers.length !== 5}
               className={`
-                px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105
-                ${
-                  selectedNumbers.length === 5 && isConnected
-                    ? 'bg-gradient-to-r from-pink-500 to-violet-500 hover:from-pink-600 hover:to-violet-600 shadow-lg'
-                    : 'bg-white/10 cursor-not-allowed'
-                }
+                w-full bg-gradient-to-r from-pink-500 to-violet-500 hover:from-pink-600 hover:to-violet-600
+                px-4 sm:px-8 py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold text-base sm:text-lg
+                transition-all duration-300 transform hover:scale-105 shadow-lg
+                ${selectedNumbers.length !== 5 ? 'opacity-50 cursor-not-allowed' : ''}
               `}
-              disabled={!isConnected || selectedNumbers.length !== 5}
-              onMouseEnter={() => {
-                // Remove hover logging
-              }}
             >
-              Place Bet (1.5 USDT)
+              Place Bet ({BET_AMOUNT} USDT)
             </button>
           </div>
         </div>
       </div>
 
       {/* Tickets Section */}
-      <div className="max-w-4xl mx-auto mb-8">
-        <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10 shadow-xl">
-          <h2 className="text-2xl font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+      <div className="max-w-4xl mx-auto">
+        <div className="bg-white/5 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-8 border border-white/10 shadow-xl">
+          <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
             Your Tickets
           </h2>
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             {tickets.map((ticket) => (
-              <div key={ticket.id} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:bg-white/15 transition-all duration-300">
-                <div className="flex justify-between items-center mb-4">
-                  <span className="text-sm text-gray-300">Ticket #{ticket.id}</span>
-                  <span className="text-sm text-gray-300">{ticket.drawNumber}</span>
-                </div>
-                <div className="flex gap-3 mb-4">
+              <div
+                key={ticket.id}
+                className="bg-white/5 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-0"
+              >
+                <div className="flex flex-wrap gap-2 sm:gap-3">
                   {ticket.numbers.map((number) => (
-                    <div
+                    <span
                       key={number}
-                      className="w-10 h-10 rounded-xl bg-gradient-to-r from-pink-500 to-violet-500 flex items-center justify-center font-bold text-sm shadow-lg"
+                      className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-white/10 flex items-center justify-center text-sm sm:text-base font-semibold"
                     >
                       {number}
-                    </div>
+                    </span>
                   ))}
                 </div>
-                <div className="flex justify-between items-center">
-                  <span className={`px-4 py-1.5 rounded-lg text-xs font-semibold ${
-                    ticket.status === 'won' ? 'bg-green-500/20 text-green-400' :
-                    ticket.status === 'lost' ? 'bg-red-500/20 text-red-400' :
-                    'bg-blue-500/20 text-blue-400'
-                  }`}>
-                    {ticket.status.toUpperCase()}
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <span className="text-xs sm:text-sm text-gray-400">{ticket.drawNumber}</span>
+                  <span className={`
+                    px-2 sm:px-3 py-1 rounded-lg sm:rounded-xl text-xs sm:text-sm font-semibold
+                    ${ticket.status === 'won' ? 'bg-green-500/20 text-green-400' :
+                      ticket.status === 'lost' ? 'bg-red-500/20 text-red-400' :
+                      'bg-yellow-500/20 text-yellow-400'}
+                  `}>
+                    {ticket.status.charAt(0).toUpperCase() + ticket.status.slice(1)}
                   </span>
-                  <span className="text-sm text-gray-300">1.5 USDT</span>
                 </div>
               </div>
             ))}
-            {tickets.length === 0 && (
-              <div className="text-center text-gray-400 py-12 text-lg">
-                No tickets yet. Place your first bet!
-              </div>
-            )}
           </div>
         </div>
       </div>
