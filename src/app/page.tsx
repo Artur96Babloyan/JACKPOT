@@ -141,7 +141,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 text-white p-2 sm:p-4">
+    <main className="min-h-screen text-white p-2 sm:p-4">
       {/* Header */}
       <div className="max-w-4xl mx-auto mb-4 sm:mb-8">
         <h1 className="text-3xl sm:text-5xl font-bold text-center mb-2 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
@@ -338,10 +338,10 @@ export default function Home() {
       </div>
 
       {/* Next Draw Timer */}
-      <div className="max-w-4xl mx-auto">
-        <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 text-center border border-white/10 shadow-xl">
-          <h3 className="text-xl font-semibold mb-3 text-gray-300">Next Draw In</h3>
-          <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+      <div className="max-w-4xl mx-auto mt-4 sm:mt-8">
+        <div className="bg-white/5 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center border border-white/10 shadow-xl">
+          <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-gray-300">Next Draw In</h3>
+          <div className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
             47:59:59
           </div>
         </div>
