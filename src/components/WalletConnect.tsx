@@ -3,6 +3,7 @@
 import { useWeb3Modal } from '@web3modal/wagmi/react'
 import { useAccount, useDisconnect } from 'wagmi'
 import { motion } from 'framer-motion'
+import { projectId } from '../constants'
 
 export function WalletConnect() {
   const { open } = useWeb3Modal()
@@ -16,7 +17,7 @@ export function WalletConnect() {
       try {
         console.log('Opening Web3Modal...')
         console.log('Current window location:', window.location.origin)
-        console.log('Project ID:', process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID)
+        console.log('Project ID:', projectId)
         await open()
         console.log('Web3Modal opened successfully')
       } catch (error) {
