@@ -10,6 +10,10 @@ const nextConfig = {
             key: 'Content-Type',
             value: 'text/plain',
           },
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*',
+          },
         ],
       },
     ];
