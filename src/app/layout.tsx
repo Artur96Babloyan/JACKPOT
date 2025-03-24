@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Providers } from "./providers";
 import Script from 'next/script';
+import { ClientProviders } from "@/providers/ClientProviders";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <meta name="theme-color" content="#1E1B4B" />
@@ -40,8 +40,8 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
         <Script src="https://telegram.org/js/telegram-web-app.js" strategy="beforeInteractive" />
       </head>
-      <body className={`${inter.className} bg-[#1E1B4B] min-h-screen`}>
-        <Providers>{children}</Providers>
+      <body className={`${inter.className} bg-[#1E1B4B] min-h-screen`} suppressHydrationWarning>
+        <ClientProviders>{children}</ClientProviders>
       </body>
     </html>
   );

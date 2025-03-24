@@ -1,30 +1,16 @@
 'use client';
 
-import { createConfig, http } from 'wagmi';
-import { mainnet, sepolia } from 'wagmi/chains';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { WagmiProvider } from 'wagmi';
-import { metaMask } from 'wagmi/connectors';
-
-const config = createConfig({
-  chains: [mainnet, sepolia] as const,
-  connectors: [
-    metaMask(),
-  ],
-  transports: {
-    [mainnet.id]: http(),
-    [sepolia.id]: http(),
-  },
-});
+import { Web3ModalProvider } from '@/components/providers/Web3ModalProvider';
 
 const queryClient = new QueryClient();
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <WagmiProvider config={config}>
+    <Web3ModalProvider>
       <QueryClientProvider client={queryClient}>
         {children}
       </QueryClientProvider>
-    </WagmiProvider>
+    </Web3ModalProvider>
   );
 } 
