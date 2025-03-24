@@ -12,5 +12,8 @@ export const wagmiConfig = defaultWagmiConfig({
     description: 'A decentralized lottery application',
     url: typeof window !== 'undefined' ? window.location.origin : 'https://jackpot-dapp.vercel.app',
     icons: ['https://jackpot-dapp.vercel.app/favicon.ico']
-  }
-}) 
+  },
+  enableWalletConnect: true,
+  enableInjected: true,
+  enableEIP6963: true
+})

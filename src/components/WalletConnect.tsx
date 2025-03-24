@@ -15,6 +15,8 @@ export function WalletConnect() {
     } else {
       try {
         console.log('Opening Web3Modal...')
+        console.log('Current window location:', window.location.origin)
+        console.log('Project ID:', process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID)
         await open()
         console.log('Web3Modal opened successfully')
       } catch (error) {

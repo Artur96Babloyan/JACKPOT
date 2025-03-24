@@ -6,7 +6,11 @@ import { projectId } from '../../constants'
 
 const queryClient = new QueryClient()
 
-createWeb3Modal({ wagmiConfig, projectId })
+// Initialize Web3Modal
+createWeb3Modal({ 
+  wagmiConfig, 
+  projectId
+})
 
 export function Web3ModalProvider({ children }: { children: React.ReactNode }) {
   return (
