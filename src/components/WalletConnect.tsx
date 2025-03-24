@@ -14,9 +14,13 @@ export function WalletConnect() {
       disconnect()
     } else {
       try {
+        console.log('Opening Web3Modal...')
         await open()
+        console.log('Web3Modal opened successfully')
       } catch (error) {
         console.error('Failed to open Web3Modal:', error)
+        // Show error to user
+        alert('Failed to connect wallet. Please try again.')
       }
     }
   }

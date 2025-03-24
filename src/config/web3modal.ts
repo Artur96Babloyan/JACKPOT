@@ -10,7 +10,7 @@ export const wagmiConfig = defaultWagmiConfig({
   metadata: {
     name: 'Jackpot DApp',
     description: 'A decentralized lottery application',
-    url: 'https://jackpot-dapp.vercel.app',
+    url: typeof window !== 'undefined' ? window.location.origin : 'https://jackpot-dapp.vercel.app',
     icons: ['https://jackpot-dapp.vercel.app/favicon.ico']
   }
 }) 
