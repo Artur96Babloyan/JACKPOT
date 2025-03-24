@@ -12,6 +12,23 @@ const nextConfig = {
   async headers() {
     return [
       {
+        source: '/walletconnect.txt',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'text/plain; charset=utf-8',
+          },
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'no-store, no-cache, must-revalidate, proxy-revalidate',
+          },
+        ],
+      },
+      {
         source: '/.well-known/walletconnect.txt',
         headers: [
           {
