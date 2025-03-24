@@ -16,7 +16,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Content-Type',
-            value: 'text/plain',
+            value: 'text/plain; charset=utf-8',
           },
           {
             key: 'Access-Control-Allow-Origin',
