@@ -1,6 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  experimental: {
+    turbo: {
+      rules: {
+        // Configure Turbopack to handle .well-known files
+        '**/.well-known/**': ['public'],
+      },
+    },
+  },
   async headers() {
     return [
       {
