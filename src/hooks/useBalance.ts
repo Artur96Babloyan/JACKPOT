@@ -12,12 +12,12 @@ export function useBalance() {
   const [isWithdrawing, setIsWithdrawing] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const deposit = async (amount: string) => {
     setIsDepositing(true);
     setError(null);
     try {
       // Implement deposit logic here
+      console.log('Depositing:', amount);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to deposit');
     } finally {
@@ -25,12 +25,12 @@ export function useBalance() {
     }
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const withdraw = async (amount: string) => {
     setIsWithdrawing(true);
     setError(null);
     try {
       // Implement withdraw logic here
+      console.log('Withdrawing:', amount);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to withdraw');
     } finally {
@@ -38,11 +38,11 @@ export function useBalance() {
     }
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const transfer = async (recipient: string, amount: string) => {
     setError(null);
     try {
       // Implement transfer logic here
+      console.log('Transferring:', amount, 'to:', recipient);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to transfer');
     }

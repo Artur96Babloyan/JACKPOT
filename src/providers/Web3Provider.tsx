@@ -2,7 +2,7 @@
 
 import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react';
 import { WagmiConfig } from 'wagmi';
-import { arbitrum, mainnet } from 'wagmi/chains';
+import { mainnet, arbitrum } from 'wagmi/chains';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
 
@@ -22,8 +22,8 @@ if (!projectId) {
 const validatedProjectId: string = projectId;
 
 const metadata = {
-  name: 'JACKPOT',
-  description: 'Decentralized Lottery Game',
+  name: 'Jackpot',
+  description: 'Decentralized Lottery Application',
   url: typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000',
   icons: ['/logo.svg'],
 };
@@ -59,13 +59,18 @@ const queryClient = new QueryClient({
 
 export function Web3Provider({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
     const initWeb3Modal = async () => {
       try {
-        // Clear any stale state
+        console.log('Initializing Web3Modal...');
+        console.log('Project ID:', validatedProjectId);
+        console.log('Chains:', chains.map(chain => chain.name));
+
+        // Clear stale state
         localStorage.removeItem('wagmi.cache');
         localStorage.removeItem('wagmi.connected');
         localStorage.removeItem('wagmi.injected.connected');
@@ -76,7 +81,6 @@ export function Web3Provider({ children }: { children: React.ReactNode }) {
           projectId: validatedProjectId,
           defaultChain: mainnet,
           themeMode: 'dark',
-          featuredWalletIds: ['c57ca95b47569778a828d19178114f4db188b89b763c899ba0be274e97267d96'],
           themeVariables: {
             '--w3m-font-family': 'Inter, sans-serif',
             '--w3m-accent': '#4F46E5',
@@ -90,6 +94,7 @@ export function Web3Provider({ children }: { children: React.ReactNode }) {
         if (error instanceof Error) {
           console.error('Error message:', error.message);
           console.error('Error stack:', error.stack);
+          setError(error.message);
         }
       }
     };
@@ -100,6 +105,14 @@ export function Web3Provider({ children }: { children: React.ReactNode }) {
 
   // Prevent hydration issues
   if (!mounted) return null;
+
+  if (error) {
+    return (
+      <div className="p-4 bg-red-100 text-red-700 rounded">
+        <p>Failed to initialize Web3Modal: {error}</p>
+      </div>
+    );
+  }
 
   return (
     <WagmiConfig config={wagmiConfig}>

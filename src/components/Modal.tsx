@@ -10,7 +10,6 @@ interface ModalProps {
 
 export function Modal({ isOpen, onClose, title, children }: ModalProps) {
 
-console.log("isOpen",isOpen)
 
   return (
     <AnimatePresence>
