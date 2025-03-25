@@ -1,0 +1,23 @@
+{
+  "selectNumbers": "Selecciona Tus Números",
+  "placeBet": "Hacer Apuesta",
+  "selectedCount": "{count} de 6 números seleccionados",
+  "quickPick": "Selección Rápida",
+  "throwLucky": "Lanzar Números de la Suerte",
+  "confirm": "Confirmar Selección",
+  "currentDraw": "Sorteo Actual",
+  "prizePool": "Bote",
+  "ticketsSold": "Boletos Vendidos",
+  "timeUntilDraw": "Tiempo Hasta el Sorteo",
+  "howItWorks": "Cómo Funciona",
+  "connectWallet": "Conectar Billetera",
+  "purchaseTickets": "Comprar Boletos",
+  "winPrizes": "Ganar Premios",
+  "features": "Características",
+  "fairness": "Justicia",
+  "security": "Seguridad",
+  "instantPayouts": "Pagos Instantáneos",
+  "fairnessDesc": "Sistema probadamente justo con resultados transparentes",
+  "securityDesc": "Contratos inteligentes seguros y auditados",
+  "instantPayoutsDesc": "Distribución instantánea de premios a tu billetera"
+}

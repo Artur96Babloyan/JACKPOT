@@ -1,47 +1,28 @@
+const createNextIntlPlugin = require('next-intl/plugin');
+
+const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  images: {
+    domains: ['telegram.org'],
+  },
   experimental: {
     turbo: {
       rules: {
-        // Configure Turbopack to handle .well-known files
-        '**/.well-known/**': ['public'],
+        // Configure rules for the @turbo/gen
       },
     },
   },
   async headers() {
     return [
       {
-        source: '/walletconnect.txt',
+        source: '/api/webhook',
         headers: [
           {
             key: 'Content-Type',
-            value: 'text/plain; charset=utf-8',
-          },
-          {
-            key: 'Access-Control-Allow-Origin',
-            value: '*',
-          },
-          {
-            key: 'Cache-Control',
-            value: 'no-store, no-cache, must-revalidate, proxy-revalidate',
-          },
-        ],
-      },
-      {
-        source: '/.well-known/walletconnect.txt',
-        headers: [
-          {
-            key: 'Content-Type',
-            value: 'text/plain; charset=utf-8',
-          },
-          {
-            key: 'Access-Control-Allow-Origin',
-            value: '*',
-          },
-          {
-            key: 'Cache-Control',
-            value: 'no-store, no-cache, must-revalidate, proxy-revalidate',
+            value: 'application/json',
           },
         ],
       },
@@ -51,12 +32,13 @@ const nextConfig = {
     if (!isServer) {
       config.resolve.fallback = {
         ...config.resolve.fallback,
-        encoding: false,
-        pino: false,
+        fs: false,
+        net: false,
+        tls: false,
       };
     }
     return config;
   },
 };
 
-module.exports = nextConfig; 
+module.exports = withNextIntl(nextConfig); 

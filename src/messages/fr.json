@@ -1,0 +1,23 @@
+{
+  "selectNumbers": "Sélectionnez Vos Nombres",
+  "placeBet": "Placer un Pari",
+  "selectedCount": "{count} sur 6 nombres sélectionnés",
+  "quickPick": "Sélection Rapide",
+  "throwLucky": "Lancer les Nombres Chanceux",
+  "confirm": "Confirmer la Sélection",
+  "currentDraw": "Tirage en Cours",
+  "prizePool": "Cagnotte",
+  "ticketsSold": "Billets Vendus",
+  "timeUntilDraw": "Temps Restant Avant le Tirage",
+  "howItWorks": "Comment Ça Marche",
+  "connectWallet": "Connecter le Portefeuille",
+  "purchaseTickets": "Acheter des Billets",
+  "winPrizes": "Gagner des Prix",
+  "features": "Fonctionnalités",
+  "fairness": "Équité",
+  "security": "Sécurité",
+  "instantPayouts": "Paiements Instantanés",
+  "fairnessDesc": "Système prouvablement équitable avec des résultats transparents",
+  "securityDesc": "Smart contracts sécurisés et audités",
+  "instantPayoutsDesc": "Distribution instantanée des prix sur votre portefeuille"
+}

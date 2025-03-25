@@ -1,0 +1,23 @@
+{
+  "selectNumbers": "Wähle Deine Zahlen",
+  "placeBet": "Wette Platzieren",
+  "selectedCount": "{count} von 6 Zahlen ausgewählt",
+  "quickPick": "Schnellauswahl",
+  "throwLucky": "Glückszahlen Werfen",
+  "confirm": "Auswahl Bestätigen",
+  "currentDraw": "Aktuelle Ziehung",
+  "prizePool": "Preisgeld",
+  "ticketsSold": "Verkaufte Tickets",
+  "timeUntilDraw": "Zeit Bis zur Ziehung",
+  "howItWorks": "So Funktioniert's",
+  "connectWallet": "Wallet Verbinden",
+  "purchaseTickets": "Tickets Kaufen",
+  "winPrizes": "Preise Gewinnen",
+  "features": "Funktionen",
+  "fairness": "Fairness",
+  "security": "Sicherheit",
+  "instantPayouts": "Sofortige Auszahlungen",
+  "fairnessDesc": "Nachweisbar faires System mit transparenten Ergebnissen",
+  "securityDesc": "Sichere und geprüfte Smart Contracts",
+  "instantPayoutsDesc": "Sofortige Preisauszahlung auf deine Wallet"
+}

@@ -1,0 +1,58 @@
+{
+  "common": {
+    "connectWallet": "Wallet verbinden",
+    "disconnect": "Trennen",
+    "balance": "Guthaben",
+    "loading": "Lädt...",
+    "error": "Fehler",
+    "success": "Erfolg"
+  },
+  "lottery": {
+    "title": "Jackpot Lotterie",
+    "description": "Gewinnen Sie einen großen Preis in Kryptowährung!",
+    "steps": {
+      "connect": "Verbinden Sie Ihre Wallet",
+      "buy": "Kaufen Sie Tickets",
+      "win": "Gewinnen Sie den Preis"
+    },
+    "currentDraw": {
+      "title": "Aktuelle Ziehung",
+      "nextDraw": "Nächste Ziehung in",
+      "prizePool": "Preispool",
+      "ticketsSold": "Verkaufte Tickets"
+    },
+    "numberSelector": {
+      "selectNumbers": "Wählen Sie Ihre Zahlen",
+      "selectedCount": "{count} Zahlen ausgewählt",
+      "quickPick": "Schnellauswahl",
+      "throwLucky": "Glückszahlen"
+    },
+    "selectNumbers": "Wähle deine Zahlen",
+    "numbersSelected": "{count}/{max} Zahlen ausgewählt",
+    "quickPick": "Schnellauswahl",
+    "placeBet": "Einsatz platzieren",
+    "generatingNumbers": "Generiere Glückszahlen...",
+    "yourNumbers": "Deine Zahlen",
+    "luckyNumbers": "Glückszahlen",
+    "timeUntilDraw": "Zeit bis zur Ziehung",
+    "howItWorks": "So funktioniert's",
+    "step1": "Verbinde deine Wallet",
+    "step2": "Wähle deine Glückszahlen",
+    "step3": "Platziere deinen Einsatz",
+    "step4": "Warte auf die Ziehung",
+    "features": {
+      "fairness": "Fairness",
+      "fairnessDesc": "Nachweisbar faire Zufallszahlengenerierung garantiert vollständige Transparenz",
+      "security": "Sicherheit",
+      "securityDesc": "Smart Contract geprüft für maximale Sicherheit und Zuverlässigkeit",
+      "instantPayout": "Sofortige Auszahlung",
+      "instantPayoutDesc": "Sofortige Auszahlungen direkt auf deine Wallet bei Gewinn"
+    }
+  },
+  "errors": {
+    "walletNotConnected": "Bitte verbinde zuerst deine Wallet",
+    "insufficientBalance": "Unzureichendes Guthaben",
+    "invalidNumbers": "Bitte wähle gültige Zahlen",
+    "transactionFailed": "Transaktion fehlgeschlagen"
+  }
+}

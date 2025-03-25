@@ -1,0 +1,58 @@
+{
+  "common": {
+    "connectWallet": "Conectar Billetera",
+    "disconnect": "Desconectar",
+    "balance": "Saldo",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito"
+  },
+  "lottery": {
+    "title": "CriptoLotería",
+    "description": "¡Gana un gran premio en criptomonedas!",
+    "steps": {
+      "connect": "Conecta tu billetera",
+      "buy": "Compra boletos",
+      "win": "Gana el premio"
+    },
+    "currentDraw": {
+      "title": "Sorteo actual",
+      "nextDraw": "Próximo sorteo en",
+      "prizePool": "Bote del premio",
+      "ticketsSold": "Boletos vendidos"
+    },
+    "numberSelector": {
+      "selectNumbers": "Selecciona tus números",
+      "selectedCount": "{count} números seleccionados",
+      "quickPick": "Selección rápida",
+      "throwLucky": "Números de la suerte"
+    },
+    "selectNumbers": "Selecciona tus números",
+    "numbersSelected": "{count}/{max} números seleccionados",
+    "quickPick": "Selección rápida",
+    "placeBet": "Realizar apuesta",
+    "generatingNumbers": "Generando números de la suerte...",
+    "yourNumbers": "Tus números",
+    "luckyNumbers": "Números de la suerte",
+    "timeUntilDraw": "Tiempo hasta el sorteo",
+    "howItWorks": "Cómo funciona",
+    "step1": "Conecta tu billetera",
+    "step2": "Selecciona tus números de la suerte",
+    "step3": "Realiza tu apuesta",
+    "step4": "Espera el sorteo",
+    "features": {
+      "fairness": "Justicia",
+      "fairnessDesc": "Generación de números aleatorios comprobablemente justa que garantiza total transparencia",
+      "security": "Seguridad",
+      "securityDesc": "Contrato inteligente auditado para máxima seguridad y fiabilidad",
+      "instantPayout": "Pago instantáneo",
+      "instantPayoutDesc": "Pagos instantáneos directamente a tu billetera al ganar"
+    }
+  },
+  "errors": {
+    "walletNotConnected": "Por favor, conecta tu billetera primero",
+    "insufficientBalance": "Saldo insuficiente",
+    "invalidNumbers": "Por favor, selecciona números válidos",
+    "transactionFailed": "La transacción falló"
+  }
+}

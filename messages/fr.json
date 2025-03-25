@@ -1,0 +1,58 @@
+{
+  "common": {
+    "connectWallet": "Connecter le portefeuille",
+    "disconnect": "Déconnecter",
+    "balance": "Solde",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès"
+  },
+  "lottery": {
+    "title": "Loterie Crypto",
+    "description": "Gagnez un grand prix en cryptomonnaie !",
+    "steps": {
+      "connect": "Connectez votre portefeuille",
+      "buy": "Achetez des tickets",
+      "win": "Gagnez le prix"
+    },
+    "currentDraw": {
+      "title": "Tirage en cours",
+      "nextDraw": "Prochain tirage dans",
+      "prizePool": "Cagnotte",
+      "ticketsSold": "Tickets vendus"
+    },
+    "numberSelector": {
+      "selectNumbers": "Sélectionnez vos numéros",
+      "selectedCount": "{count} numéros sélectionnés",
+      "quickPick": "Sélection rapide",
+      "throwLucky": "Numéros chanceux"
+    },
+    "selectNumbers": "Sélectionnez vos numéros",
+    "numbersSelected": "{count}/{max} numéros sélectionnés",
+    "quickPick": "Sélection rapide",
+    "placeBet": "Placer le pari",
+    "generatingNumbers": "Génération des numéros chanceux...",
+    "yourNumbers": "Vos numéros",
+    "luckyNumbers": "Numéros chanceux",
+    "timeUntilDraw": "Temps avant le tirage",
+    "howItWorks": "Comment ça marche",
+    "step1": "Connectez votre portefeuille",
+    "step2": "Sélectionnez vos numéros chanceux",
+    "step3": "Placez votre pari",
+    "step4": "Attendez le tirage",
+    "features": {
+      "fairness": "Équité",
+      "fairnessDesc": "Génération de nombres aléatoires prouvable qui garantit une transparence totale",
+      "security": "Sécurité",
+      "securityDesc": "Contrat intelligent audité pour une sécurité et une fiabilité maximales",
+      "instantPayout": "Paiement instantané",
+      "instantPayoutDesc": "Paiements instantanés directement sur votre portefeuille en cas de gain"
+    }
+  },
+  "errors": {
+    "walletNotConnected": "Veuillez d'abord connecter votre portefeuille",
+    "insufficientBalance": "Solde insuffisant",
+    "invalidNumbers": "Veuillez sélectionner des numéros valides",
+    "transactionFailed": "La transaction a échoué"
+  }
+}

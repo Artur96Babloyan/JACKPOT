@@ -1,0 +1,58 @@
+{
+  "common": {
+    "connectWallet": "Connect Wallet",
+    "disconnect": "Disconnect",
+    "balance": "Balance",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  },
+  "lottery": {
+    "title": "Crypto Lottery",
+    "description": "Win big prizes in cryptocurrency!",
+    "steps": {
+      "connect": "Connect Your Wallet",
+      "buy": "Buy Tickets",
+      "win": "Win the Prize"
+    },
+    "currentDraw": {
+      "title": "Current Draw",
+      "nextDraw": "Next Draw in",
+      "prizePool": "Prize Pool",
+      "ticketsSold": "Tickets Sold"
+    },
+    "numberSelector": {
+      "selectNumbers": "Select Your Numbers",
+      "selectedCount": "{count} numbers selected",
+      "quickPick": "Quick Pick",
+      "throwLucky": "Feeling Lucky"
+    },
+    "selectNumbers": "Select Your Numbers",
+    "numbersSelected": "{count}/{max} numbers selected",
+    "quickPick": "Quick Pick",
+    "placeBet": "Place Bet",
+    "generatingNumbers": "Generating Lucky Numbers...",
+    "yourNumbers": "Your Numbers",
+    "luckyNumbers": "Lucky Numbers",
+    "timeUntilDraw": "Time Until Draw",
+    "howItWorks": "How It Works",
+    "step1": "Connect your wallet",
+    "step2": "Choose your lucky numbers",
+    "step3": "Place your bet",
+    "step4": "Wait for the draw",
+    "features": {
+      "fairness": "Fairness",
+      "fairnessDesc": "Provably fair random number generation ensures complete transparency",
+      "security": "Security",
+      "securityDesc": "Smart contract audited for maximum security and reliability",
+      "instantPayout": "Instant Payout",
+      "instantPayoutDesc": "Instant payouts directly to your wallet when you win"
+    }
+  },
+  "errors": {
+    "walletNotConnected": "Please connect your wallet first",
+    "insufficientBalance": "Insufficient balance",
+    "invalidNumbers": "Please select valid numbers",
+    "transactionFailed": "Transaction failed"
+  }
+}

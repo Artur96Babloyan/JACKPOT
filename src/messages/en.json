@@ -1,0 +1,23 @@
+{
+  "selectNumbers": "Select Your Numbers",
+  "placeBet": "Place Bet",
+  "selectedCount": "{count} of 6 numbers selected",
+  "quickPick": "Quick Pick",
+  "throwLucky": "Throw Lucky Numbers",
+  "confirm": "Confirm Selection",
+  "currentDraw": "Current Draw",
+  "prizePool": "Prize Pool",
+  "ticketsSold": "Tickets Sold",
+  "timeUntilDraw": "Time Until Draw",
+  "howItWorks": "How It Works",
+  "connectWallet": "Connect Wallet",
+  "purchaseTickets": "Purchase Tickets",
+  "winPrizes": "Win Prizes",
+  "features": "Features",
+  "fairness": "Fairness",
+  "security": "Security",
+  "instantPayouts": "Instant Payouts",
+  "fairnessDesc": "Provably fair system with transparent results",
+  "securityDesc": "Secure and audited smart contracts",
+  "instantPayoutsDesc": "Instant prize distribution to your wallet"
+}

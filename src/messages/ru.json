@@ -1,0 +1,23 @@
+{
+  "selectNumbers": "Выберите Ваши Числа",
+  "placeBet": "Сделать Ставку",
+  "selectedCount": "Выбрано {count} из 6 чисел",
+  "quickPick": "Быстрый Выбор",
+  "throwLucky": "Бросить Счастливые Числа",
+  "confirm": "Подтвердить Выбор",
+  "currentDraw": "Текущий Розыгрыш",
+  "prizePool": "Призовой Фонд",
+  "ticketsSold": "Продано Билетов",
+  "timeUntilDraw": "Время До Розыгрыша",
+  "howItWorks": "Как Это Работает",
+  "connectWallet": "Подключить Кошелек",
+  "purchaseTickets": "Купить Билеты",
+  "winPrizes": "Выиграть Призы",
+  "features": "Преимущества",
+  "fairness": "Честность",
+  "security": "Безопасность",
+  "instantPayouts": "Мгновенные Выплаты",
+  "fairnessDesc": "Проверяемая честная система с прозрачными результатами",
+  "securityDesc": "Безопасные и проверенные смарт-контракты",
+  "instantPayoutsDesc": "Мгновенное получение призов на ваш кошелек"
+}
