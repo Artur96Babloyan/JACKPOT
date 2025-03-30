@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { NumberSelector } from './NumberSelector';
 import { LanguageSelector } from './LanguageSelector';
 import { WalletConnect } from './WalletConnect';
+import { BetSection } from './BetSection';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export function HomePage() {
@@ -13,6 +14,11 @@ export function HomePage() {
 
   const handleNumbersSelected = (numbers: number[]) => {
     setSelectedNumbers(numbers);
+  };
+
+  const handlePlaceBet = (amount: number) => {
+    // Here you would integrate with your smart contract
+    console.log('Placing bet:', { numbers: selectedNumbers, amount });
   };
 
   const containerVariants = {
@@ -31,7 +37,7 @@ export function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 relative overflow-hidden">
+    <div className="min-h-[100dvh] bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -left-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
@@ -40,25 +46,34 @@ export function HomePage() {
       </div>
 
       {/* Header */}
-      <header className="relative z-10">
-        <div className="flex justify-between items-center px-6 py-4 backdrop-blur-md bg-black/20 border-b border-white/10">
-          <LanguageSelector />
+      <motion.header 
+        className="fixed top-0 left-0 right-0 z-50"
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ type: "spring", stiffness: 100, damping: 20 }}
+      >
+        <div className="flex justify-between items-center px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 backdrop-blur-md bg-black/20 border-b border-white/10">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <LanguageSelector />
+            <span className="text-xs sm:text-sm text-gray-400">|</span>
+            <span className="text-xs sm:text-sm text-gray-300">Jackpot</span>
+          </div>
           <WalletConnect />
         </div>
-      </header>
+      </motion.header>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-8 sm:py-16 relative z-10">
+      <main className="container mx-auto px-3 sm:px-4 md:px-6 py-4 sm:py-6 md:py-8 lg:py-12 relative z-10 mt-[60px] sm:mt-[72px] md:mt-[80px]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12 sm:mb-20"
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-center mb-6 sm:mb-8 md:mb-12 lg:mb-16"
         >
-          <h1 className="text-5xl sm:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text drop-shadow-lg">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text drop-shadow-lg">
             {t('lottery.title')}
           </h1>
-          <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed px-3 sm:px-4">
             {t('lottery.description')}
           </p>
         </motion.div>
@@ -68,7 +83,7 @@ export function HomePage() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-20"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8 mb-6 sm:mb-8 md:mb-12 lg:mb-16"
         >
           {[
             { key: 'connect', title: t('lottery.steps.connect'), desc: t('common.connectWallet') },
@@ -78,15 +93,15 @@ export function HomePage() {
             <motion.div
               key={step.key}
               variants={itemVariants}
-              className="relative p-6 sm:p-8 bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-lg rounded-3xl border border-purple-500/20 shadow-xl hover:shadow-2xl transition-all duration-300 group hover:border-purple-500/40"
+              className="relative p-3 sm:p-4 md:p-6 bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-lg rounded-xl sm:rounded-2xl border border-purple-500/20 shadow-xl hover:shadow-2xl transition-all duration-300 group hover:border-purple-500/40"
             >
-              <div className="absolute -top-4 -left-4 w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:scale-110 transition-transform duration-300">
+              <div className="absolute -top-2 -left-2 sm:-top-3 sm:-left-3 w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-sm sm:text-base md:text-lg shadow-lg group-hover:scale-110 transition-transform duration-300">
                 {index + 1}
               </div>
-              <h3 className="text-xl sm:text-2xl font-semibold mb-3 text-white">
+              <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold mb-2 sm:mb-3 text-white">
                 {step.title}
               </h3>
-              <p className="text-base text-gray-400 leading-relaxed">
+              <p className="text-xs sm:text-sm md:text-base text-gray-400 leading-relaxed">
                 {step.desc}
               </p>
             </motion.div>
@@ -94,7 +109,7 @@ export function HomePage() {
         </motion.div>
 
         {/* Number Selector Section */}
-        <div className="max-w-4xl mx-auto mb-12 sm:mb-20">
+        <div className="max-w-4xl mx-auto mb-6 sm:mb-8 md:mb-12 lg:mb-16">
           <NumberSelector onNumbersSelected={handleNumbersSelected} />
           <AnimatePresence>
             {selectedNumbers.length > 0 && (
@@ -102,12 +117,12 @@ export function HomePage() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
-                className="mt-8 sm:mt-12 text-center"
+                className="mt-4 sm:mt-6 md:mt-8 text-center"
               >
-                <p className="text-lg sm:text-xl font-semibold text-gray-300 mb-6">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-300 mb-3 sm:mb-4 md:mb-6">
                   {t('lottery.numberSelector.selectedCount', { count: selectedNumbers.length })}
                 </p>
-                <div className="flex flex-wrap gap-3 sm:gap-4 justify-center">
+                <div className="flex flex-wrap gap-2 sm:gap-3 md:gap-4 justify-center">
                   {selectedNumbers.map((num) => (
                     <motion.div
                       key={num}
@@ -115,7 +130,7 @@ export function HomePage() {
                       animate={{ scale: 1 }}
                       exit={{ scale: 0 }}
                       transition={{ type: "spring", stiffness: 200 }}
-                      className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 text-white flex items-center justify-center font-bold text-xl sm:text-2xl shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 transition-shadow duration-300"
+                      className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 text-white flex items-center justify-center font-bold text-base sm:text-lg md:text-xl lg:text-2xl shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 transition-shadow duration-300"
                     >
                       {num}
                     </motion.div>
@@ -126,12 +141,18 @@ export function HomePage() {
           </AnimatePresence>
         </div>
 
+        {/* Bet Section */}
+        <BetSection 
+          selectedNumbers={selectedNumbers} 
+          onPlaceBet={handlePlaceBet}
+        />
+
         {/* Features Section */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8"
         >
           {[
             { key: 'fairness', icon: '🎲', title: t('lottery.features.fairness'), desc: t('lottery.features.fairnessDesc') },
@@ -141,13 +162,13 @@ export function HomePage() {
             <motion.div
               key={feature.key}
               variants={itemVariants}
-              className="p-6 sm:p-8 bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-lg rounded-3xl border border-purple-500/20 shadow-xl hover:shadow-2xl transition-all duration-300 group hover:border-purple-500/40"
+              className="p-3 sm:p-4 md:p-6 bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-lg rounded-xl sm:rounded-2xl border border-purple-500/20 shadow-xl hover:shadow-2xl transition-all duration-300 group hover:border-purple-500/40"
             >
-              <div className="text-3xl sm:text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">{feature.icon}</div>
-              <h3 className="text-xl sm:text-2xl font-semibold mb-3 text-white">
+              <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-2 sm:mb-3 md:mb-4 transform group-hover:scale-110 transition-transform duration-300">{feature.icon}</div>
+              <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold mb-2 sm:mb-3 text-white">
                 {feature.title}
               </h3>
-              <p className="text-base text-gray-400 leading-relaxed">
+              <p className="text-xs sm:text-sm md:text-base text-gray-400 leading-relaxed">
                 {feature.desc}
               </p>
             </motion.div>

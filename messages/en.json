@@ -5,7 +5,8 @@
     "balance": "Balance",
     "loading": "Loading...",
     "error": "Error",
-    "success": "Success"
+    "success": "Success",
+    "cancel": "Cancel"
   },
   "lottery": {
     "title": "Crypto Lottery",
@@ -48,6 +49,21 @@
       "instantPayout": "Instant Payout",
       "instantPayoutDesc": "Instant payouts directly to your wallet when you win"
     }
+  },
+  "betting": {
+    "title": "Place Your Bet",
+    "betAmount": "Bet Amount (USDT)",
+    "selectedNumbers": "Selected Numbers",
+    "placeBet": "Place Bet",
+    "addFunds": "Add Funds",
+    "addFundsTitle": "Add Funds to Your Wallet",
+    "amount": "Amount (USDT)",
+    "confirm": "Confirm",
+    "connectWallet": "Connect Wallet to Place Bet",
+    "ticketPrice": "Ticket Price: 2.4 USDT",
+    "currency": "USDT",
+    "minBet": "Minimum bet: 2.4 USDT",
+    "maxBet": "Maximum bet: 1000 USDT"
   },
   "errors": {
     "walletNotConnected": "Please connect your wallet first",

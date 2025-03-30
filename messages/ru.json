@@ -5,7 +5,8 @@
     "balance": "Баланс",
     "loading": "Загрузка...",
     "error": "Ошибка",
-    "success": "Успех"
+    "success": "Успех",
+    "cancel": "Отмена"
   },
   "lottery": {
     "title": "КриптоЛотерея",
@@ -48,6 +49,20 @@
       "instantPayout": "Мгновенные выплаты",
       "instantPayoutDesc": "Мгновенные выплаты прямо на ваш кошелек при выигрыше"
     }
+  },
+  "betting": {
+    "title": "Сделайте ставку",
+    "betAmount": "Количество билетов",
+    "selectedNumbers": "Выбранные числа",
+    "placeBet": "Сделать ставку",
+    "addFunds": "Пополнить счет",
+    "addFundsTitle": "Пополнить кошелек",
+    "amount": "Сумма (USDT)",
+    "confirm": "Подтвердить",
+    "connectWallet": "Подключите кошелек для размещения ставки",
+    "ticketPrice": "Цена за билет: 2.4 USDT",
+    "currency": "USDT",
+    "totalPrice": "Общая стоимость: {amount} USDT"
   },
   "errors": {
     "walletNotConnected": "Пожалуйста, сначала подключите кошелек",
