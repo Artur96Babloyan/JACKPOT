@@ -11,10 +11,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export function HomePage() {
 
-  useEffect(() => {
-		WebApp.ready(); 
-		WebApp.expand();    
-	}, []);
+
 
   const t = useTranslations();
   const [selectedNumbers, setSelectedNumbers] = useState<number[]>([]);
@@ -42,7 +39,13 @@ export function HomePage() {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 }
   };
-
+  useEffect(() => {
+		// Only run if window is available
+		if (typeof window !== 'undefined') {
+			WebApp.ready();
+			WebApp.expand();
+		}
+	}, []);
   return (
     <div className="min-h-[100dvh] bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 relative overflow-hidden">
       {/* Animated background elements */}
