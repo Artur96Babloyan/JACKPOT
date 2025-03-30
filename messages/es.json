@@ -5,7 +5,8 @@
     "balance": "Saldo",
     "loading": "Cargando...",
     "error": "Error",
-    "success": "Éxito"
+    "success": "Éxito",
+    "cancel": "Cancelar"
   },
   "lottery": {
     "title": "CriptoLotería",
@@ -48,6 +49,21 @@
       "instantPayout": "Pago instantáneo",
       "instantPayoutDesc": "Pagos instantáneos directamente a tu billetera al ganar"
     }
+  },
+  "betting": {
+    "title": "Realiza tu apuesta",
+    "betAmount": "Cantidad de la apuesta (USDT)",
+    "selectedNumbers": "Números seleccionados",
+    "placeBet": "Realizar apuesta",
+    "addFunds": "Añadir fondos",
+    "addFundsTitle": "Añadir fondos a tu billetera",
+    "amount": "Cantidad (USDT)",
+    "confirm": "Confirmar",
+    "connectWallet": "Conecta tu billetera para apostar",
+    "ticketPrice": "Precio del boleto: 2.4 USDT",
+    "currency": "USDT",
+    "minBet": "Apuesta mínima: 2.4 USDT",
+    "maxBet": "Apuesta máxima: 1000 USDT"
   },
   "errors": {
     "walletNotConnected": "Por favor, conecta tu billetera primero",

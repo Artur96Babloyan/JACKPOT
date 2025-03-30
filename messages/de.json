@@ -5,7 +5,8 @@
     "balance": "Guthaben",
     "loading": "Lädt...",
     "error": "Fehler",
-    "success": "Erfolg"
+    "success": "Erfolg",
+    "cancel": "Abbrechen"
   },
   "lottery": {
     "title": "Jackpot Lotterie",
@@ -48,6 +49,21 @@
       "instantPayout": "Sofortige Auszahlung",
       "instantPayoutDesc": "Sofortige Auszahlungen direkt auf deine Wallet bei Gewinn"
     }
+  },
+  "betting": {
+    "title": "Platziere deinen Einsatz",
+    "betAmount": "Einsatzbetrag (USDT)",
+    "selectedNumbers": "Ausgewählte Zahlen",
+    "placeBet": "Einsatz platzieren",
+    "addFunds": "Guthaben aufladen",
+    "addFundsTitle": "Guthaben auf deine Wallet aufladen",
+    "amount": "Betrag (USDT)",
+    "confirm": "Bestätigen",
+    "connectWallet": "Verbinde deine Wallet zum Platzieren des Einsatzes",
+    "ticketPrice": "Ticketpreis: 2.4 USDT",
+    "currency": "USDT",
+    "minBet": "Mindesteinsatz: 2.4 USDT",
+    "maxBet": "Höchsteinsatz: 1000 USDT"
   },
   "errors": {
     "walletNotConnected": "Bitte verbinde zuerst deine Wallet",

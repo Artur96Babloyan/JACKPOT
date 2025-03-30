@@ -5,7 +5,8 @@
     "balance": "Solde",
     "loading": "Chargement...",
     "error": "Erreur",
-    "success": "Succès"
+    "success": "Succès",
+    "cancel": "Annuler"
   },
   "lottery": {
     "title": "Loterie Crypto",
@@ -48,6 +49,21 @@
       "instantPayout": "Paiement instantané",
       "instantPayoutDesc": "Paiements instantanés directement sur votre portefeuille en cas de gain"
     }
+  },
+  "betting": {
+    "title": "Placez votre pari",
+    "betAmount": "Montant du pari (USDT)",
+    "selectedNumbers": "Numéros sélectionnés",
+    "placeBet": "Placer le pari",
+    "addFunds": "Ajouter des fonds",
+    "addFundsTitle": "Ajouter des fonds à votre portefeuille",
+    "amount": "Montant (USDT)",
+    "confirm": "Confirmer",
+    "connectWallet": "Connectez votre portefeuille pour parier",
+    "ticketPrice": "Prix du ticket : 2.4 USDT",
+    "currency": "USDT",
+    "minBet": "Pari minimum : 2.4 USDT",
+    "maxBet": "Pari maximum : 1000 USDT"
   },
   "errors": {
     "walletNotConnected": "Veuillez d'abord connecter votre portefeuille",

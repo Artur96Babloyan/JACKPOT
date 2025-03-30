@@ -62,7 +62,9 @@
     "connectWallet": "Подключите кошелек для размещения ставки",
     "ticketPrice": "Цена за билет: 2.4 USDT",
     "currency": "USDT",
-    "totalPrice": "Общая стоимость: {amount} USDT"
+    "totalPrice": "Общая стоимость: {amount} USDT",
+    "minBet": "Минимальная ставка: 2.4 USDT",
+    "maxBet": "Максимальная ставка: 1000 USDT"
   },
   "errors": {
     "walletNotConnected": "Пожалуйста, сначала подключите кошелек",
