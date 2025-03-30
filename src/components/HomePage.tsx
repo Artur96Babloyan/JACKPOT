@@ -1,14 +1,21 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { NumberSelector } from './NumberSelector';
 import { LanguageSelector } from './LanguageSelector';
 import { WalletConnect } from './WalletConnect';
 import { BetSection } from './BetSection';
+import WebApp from '@twa-dev/sdk';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export function HomePage() {
+
+  useEffect(() => {
+		WebApp.ready(); 
+		WebApp.expand();    
+	}, []);
+
   const t = useTranslations();
   const [selectedNumbers, setSelectedNumbers] = useState<number[]>([]);
 
